@@ -1,0 +1,30 @@
+/** CMPT 276 Assignment 1
+    CSS for Calculator **/
+
+
+h2 {
+  color: red;
+}
+
+div.main {
+  background-color: silver;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 15px;
+}
+
+th {
+  background-color: darkgray;
+}
+
+table, tr, td, th {
+  border: 1px solid;
+  border-color: gray;
+  border-collapse: collapse;
+}
+
+button {
+  color: white;
+  background-color: red;
+  border: none;
+}
