@@ -38,6 +38,11 @@ input.numerator {
   text-align: right;
 }
 
+input.activity, input.sname {
+  display: table-cell;
+  width: 93%;
+}
+
 input.per, input.gpa{
   display: table-cell;
   width: 95%;
