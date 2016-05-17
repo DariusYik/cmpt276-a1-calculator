@@ -5,6 +5,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="calculator.css" type="text/css" />
+  <script src="jquery-1.12.2.min.js"></script>
   <title>Assignment 1 - Calculator</title>
 </head>
 
@@ -22,36 +23,42 @@
       <th>Short Name</th>
       <th>Grade</th>
       <th>Percentage</th>
+      <th>GPA (Out of 4.33)</th>
     </tr>
     <tr>
       <td>Activity 1</td>
-      <td>A1</td>
-      <td><input class="a1_num" type="text" size="13" onkeypress="percentage(a1_num.value, a1_denom.value, a1_per)"> / <input class="a1_denom" type="text" size="13" onkeypress="percentage(x)"></td>
-      <td><input class="a1_per" type="text" value=" " size="10"></td>
+      <td><input type="text" placeholder="A1" style="display:table-cell; width:90%"></td>
+      <td><input class="a1_num numerator" type="text" size="13"> / <input class="a1_denom" type="text" size="13"></td>
+      <td><input class="a1_per per" type="text" value=" "></td>
+      <td><input class="a1_gpa gpa" type="text" value=" "></td>
     </tr>
     <tr>
       <td>Activity 2</td>
       <td>A2</td>
-      <td><input class="a2_num" type="text" size="13" onkeypress="percentage(x)"> / <input class="a2_denom" type="text" size="13" onkeypress="percentage(x)"></td>
-      <td><input class="a2_per" type="text" value=" " size="10"></td>
+      <td><input class="a2_num numerator" type="text" size="13"> / <input class="a2_denom" type="text" size="13"></td>
+      <td><input class="a2_per per" type="text" value=" "></td>
+      <td><input class="a2_gpa gpa" type="text" value=" "></td>
     </tr>
     <tr>
       <td>Activity 3</td>
       <td>A3</td>
-      <td><input class="a3_num" type="text" size="13" onkeypress="percentage(x)"> / <input class="a3_denom" type="text" size="13" onkeypress="percentage(x)"></td>
-      <td><input class="a3_per" type="text" value=" " size="10"></td>
+      <td><input class="a3_num numerator" type="text" size="13"> / <input class="a3_denom" type="text" size="13"></td>
+      <td><input class="a3_per per" type="text" value=" "></td>
+      <td><input class="a3_gpa gpa" type="text" value=" "></td>
     </tr>
     <tr>
       <td>Activity 4</td>
       <td>A4</td>
-      <td><input class="a4_num" type="text" size="13" onkeypress="percentage(x)"> / <input class="a4_denom" type="text" size="13" onkeypress="percentage(x)"></td>
-      <td><input class="a4_per" type="text" value=" " size="10"></td>
+      <td><input class="a4_num numerator" type="text" size="13"> / <input class="a4_denom" type="text" size="13"></td>
+      <td><input class="a4_per per" type="text" value=" "></td>
+      <td><input class="a4_gpa gpa" type="text" value=" "></td>
     </tr>
     <tr>
       <td><b>TOTAL</b></td>
       <td />
       <td />
-      <td><input class="calc_total" type="text" value=" " size="10"></td>
+      <td><input class="total_per per" type="text" value=" "></td>
+      <td><input class="total_gpa gpa" type="text" value=" "></td>
     </tr>
   </table>
   <br>

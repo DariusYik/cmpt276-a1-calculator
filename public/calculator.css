@@ -7,7 +7,7 @@ h2 {
 }
 
 div.main {
-  width: 1005px;
+  width: 1307px;
   background-color: #eff5f5;
   padding: 15px;
   padding-bottom: 55px;
@@ -20,8 +20,9 @@ th {
 }
 
 table, tr, td, th {
+  table-layout: fixed;
   height: 25px;
-  width: 1000px;
+  width: 250px;
   padding: 5px;
   border: 1px solid;
   border-color: gray;
@@ -30,17 +31,20 @@ table, tr, td, th {
 
 input {
   padding: 7px;
-}
-
-input.calc_total {
-  border-style: none;
-  padding: 7px;
-  background-color: #eff5f5;
-  float: right;
+  font-size: 11px;
 }
 
 input.numerator {
   text-align: right;
+}
+
+input.per, input.gpa{
+  display: table-cell;
+  width: 95%;
+  text-align: center;
+  border-style: none;
+  background-color: #eff5f5;
+  font-weight: bold;
 }
 
 button {
