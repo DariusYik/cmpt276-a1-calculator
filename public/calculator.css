@@ -32,6 +32,10 @@ input {
   padding: 7px;
 }
 
+input.numerator {
+  text-align: right;
+}
+
 button {
   color: white;
   background-color: #cc0000;
