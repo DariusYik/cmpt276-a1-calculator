@@ -16,11 +16,16 @@ A1	70/100,	A2	20/80,	A3	10/10:
 
 */
 
+function percentage(num, denom, name) {
+  var per = num / denom;
+  document.getElementsByClassName('name').value = per;
+}
+
 function average() {
-  var t1 = getElementsByClassName('total1');
-  var t2 = getElementsByClassName('total2');
-  var t3 = getElementsByClassName('total3');
-  var t4 = getElementsByClassName('total4');
+  var t1 = document.getElementsByClassName('a1_per').value;
+  var t2 = document.getElementsByClassName('a2_per').value;
+  var t3 = document.getElementsByClassName('a3_per').value;
+  var t4 = document.getElementsByClassName('a4_per').value;
   var tAll= t1 + t2 +t3 +t4;
 
   return eval((t1+t2+t3+t4) / tAll);

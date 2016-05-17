@@ -32,6 +32,13 @@ input {
   padding: 7px;
 }
 
+input.calc_total {
+  border-style: none;
+  padding: 7px;
+  background-color: #eff5f5;
+  float: right;
+}
+
 input.numerator {
   text-align: right;
 }
