@@ -3,23 +3,24 @@
 
 
 h2 {
-  color: red;
+  color: #cc0000;
 }
 
 div.main {
   width: 1005px;
-  background-color: silver;
-  padding: 20px;
-  padding-bottom: 50px;
+  background-color: #eff5f5;
+  padding: 15px;
+  padding-bottom: 55px;
   border-radius: 3px;
 }
 
 th {
-  background-color: darkgray;
+  background-color: #d9d9d9;
   text-align: left;
 }
 
 table, tr, td, th {
+  height: 25px;
   width: 1000px;
   padding: 5px;
   border: 1px solid;
@@ -27,9 +28,13 @@ table, tr, td, th {
   border-collapse: collapse;
 }
 
+input {
+  padding: 7px;
+}
+
 button {
   color: white;
-  background-color: red;
+  background-color: #cc0000;
   border-style: hidden;
   border-radius: 3px;
   float: right;
