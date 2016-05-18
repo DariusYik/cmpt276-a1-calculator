@@ -16,19 +16,41 @@ A1	70/100,	A2	20/80,	A3	10/10:
 
 */
 
-function percentage(num, denom, name) {
-  var per = num / denom;
-  document.getElementsByClassName('name').value = per;
+var TableRowCount = 5; //Initializing to Keep track of the amount of rows in current table
+
+function total(numerator, denominator, name) {
+  numerator = document.getElementsByClassName('a1_per').value;
 }
 
-function average() {
+function addRow() {
+    var table = document.getElementById("main_table");
+    table.insertRow(TableRowCount);
+    row.insertCell(0);
+    vrow.insertCell(1);
+    row.insertCell(2);
+    row.insertCell(3);
+    row.insertCell(4);
+
+
+    TableRowCount++;
+}
+
+function removeRow() {
+  var table = document.getElementById("main_table");
+  table.deleteRow(TableRowCount - 1);
+
+  TableRowCount--;
+}
+
+function average(name) {
+  var numerator = "name + de"
   var t1 = document.getElementsByClassName('a1_per').value;
   var t2 = document.getElementsByClassName('a2_per').value;
   var t3 = document.getElementsByClassName('a3_per').value;
   var t4 = document.getElementsByClassName('a4_per').value;
   var tAll= t1 + t2 +t3 +t4;
 
-  return eval((t1+t2+t3+t4) / tAll);
+  eval((t1+t2+t3+t4) / tAll);
 
 
 }

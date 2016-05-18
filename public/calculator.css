@@ -6,7 +6,7 @@ h2 {
   color: #cc0000;
 }
 
-div.main {
+div.main_body {
   width: 1307px;
   background-color: #eff5f5;
   padding: 15px;
@@ -21,7 +21,7 @@ th {
 
 table, tr, td, th {
   table-layout: fixed;
-  height: 25px;
+  height: 30px;
   width: 250px;
   padding: 5px;
   border: 1px solid;

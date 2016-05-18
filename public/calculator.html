@@ -12,24 +12,24 @@
   <script src="calculate.js" type="text/javascript"></script>
   <h1>Grade Calculator</h1>
 
-  <div class="main">
+  <div class="main_body">
   <h2>Activities</h2>
   <p>Give grades to the numeric activities:</p>
   <br>
-  <table>
+  <table id="main_table">
     <tr>
       <th>Name</th>
       <th>Short Name</th>
       <th>Grade</th>
       <th>Percentage</th>
-      <th>GPA (Out of 4.33)</th>
+      <th>GPA (Out of 4.33) / Letter Grade</th>
     </tr>
     <tr>
       <td><input class="activity" type="text" value="Activity 1" placeholder="Activity 1"></td>
       <td><input class="sname" type="text" value="A1" placeholder="A1"></td>
       <td><input class="a1_num numerator" type="text" size="13"> / <input class="a1_denom" type="text" size="13"></td>
-      <td><input class="a1_per per" type="text"></td>
-      <td><input class="a1_gpa gpa" type="text"></td>
+      <td id="percentage1" />
+      <td id="gpa1" />
     </tr>
     <tr>
       <td><input class="activity" type="text" value="Activity 2" placeholder="Activity 2"></td>
@@ -63,6 +63,9 @@
   <br>
   <button type="button" onclick="mean(x)">MEAN</button>
   <button type="button" onclick="average(x)">AVERAGE</button>
+
+<button onclick="addRow()">Add Activity</button>
+<button onclick="removeRow()">Remove Activity</button>
   </div>
 </body>
 </html>
