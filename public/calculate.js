@@ -16,45 +16,99 @@ A1	70/100,	A2	20/80,	A3	10/10:
 
 */
 
-var TableRowCount = 5; //Initializing to Keep track of the amount of rows in current table
-
+var TableRowCount = 5; //Count starting from top of table (not including total) for row tracking
+var RowNumber = TableRowCount-1; //Number of activities, easier for typing in later on
+/*
 function total(numerator, denominator, name) {
   numerator = document.getElementsByClassName('a1_per').value;
 }
 
 function addRow() {
-    var table = document.getElementById("main_table");
-    table.insertRow(TableRowCount);
-    row.insertCell(0);
-    vrow.insertCell(1);
-    row.insertCell(2);
-    row.insertCell(3);
-    row.insertCell(4);
+    /*var table = document.getElementById("main_table");
+    var row = table.insertRow(TableRowCount);
+    var activity_name = row.insertCell(0);
+    activity_name.innerHTML = '<input type="input" onload="this.value="Activity "+RowNumber" placeholder="Activity "+RowNumber />';
 
+    var sname = row.insertCell(1);
+    var grade = row.insertCell(2);
+    var percentage = row.insertCell(3);
+    var gpa = row.insertCell(4);
 
-    TableRowCount++;
+    var element1 = document.createElement("input");
+    element1.type="Activity "+RowNumber;
+    grade.appendChild(element1);
+
+    activity_name.setAttribute("value", "Activity" + TableRowCount);
+
+*/
+/*
+  var tblBody = document.getElementById("main_table").tBodies[0];
+  var newNode = tblBody.rows[1].cloneNode(true);
+  newNode.insertBefore("total");
+  RowNumber++;
+  TableRowCount++;
 }
 
 function removeRow() {
-  var table = document.getElementById("main_table");
-  table.deleteRow(TableRowCount - 1);
+  if ( TableRowCount == 2 ) {
+    alert("You can't have less than one row!");
+    return; //exits if you try to remove the last row
+  }
 
+  var table = document.getElementById("main_table");
+  table.deleteRow(RowNumber);
+
+  RowNumber--;
   TableRowCount--;
 }
-
-function average(name) {
-  var numerator = "name + de"
-  var t1 = document.getElementsByClassName('a1_per').value;
-  var t2 = document.getElementsByClassName('a2_per').value;
-  var t3 = document.getElementsByClassName('a3_per').value;
-  var t4 = document.getElementsByClassName('a4_per').value;
-  var tAll= t1 + t2 +t3 +t4;
-
-  eval((t1+t2+t3+t4) / tAll);
-
-
+*/
+function average() {
+  var total = 0;
+  var total_num = 0;
+  var total_den = 0;
+  var ActivityCount = 0; //number of activities counted in the mean
+  for (var i = 1; i <TableRowCount; i++) {
+    var num = document.getElementById("a"+i+"_num").value;
+    var dem = document.getElementById("a"+i+"_denom").value;
+    var temp_total = num / dem;
+    if( isFinite(temp_total) == false || temp_total < 0 ) {
+      continue;
+    }
+    ActivityCount++;
+    total += temp_total;
+  }
+  total = total / ActivityCount;
+  document.getElementById("total_per").innerHTML = total;
 }
 
 function mean() {
+  var total = 0;
+  var ActivityCount = 0; //number of activities counted in the mean
+  for (var i = 1; i <TableRowCount; i++) {
+    var num = document.getElementById("a"+i+"_num").value;
+    var den = document.getElementById("a"+i+"_denom").value;
+    var temp_total = num / den;
+    if( isFinite(temp_total) == false || temp_total < 0 ) {
+      continue;
+    }
+    ActivityCount++;
+    total += temp_total;
+  }
+  total = total / ActivityCount;
+  document.getElementById("total_per").innerHTML = total;
+}
 
+//calculates percent instantly
+function calculate() {
+  for (var i = 1; i<TableRowCount; i++) {
+    var num = document.getElementById("a"+i+"_num").value;
+    var den = document.getElementById("a"+i+"_denom").value;
+    var per = num / den * 100;
+    if( isFinite(per) == false || per < 0 ) {
+      document.getElementById("percentage"+i).innerHTML = "N/A";
+      continue;
+    }
+    per = Math.round(per * 100) / 100;
+    document.getElementById("percentage"+i).innerHTML = per + "%";
+  }
 }

@@ -7,7 +7,7 @@ h2 {
 }
 
 div.main_body {
-  width: 1307px;
+  width: 1043px;
   background-color: #eff5f5;
   padding: 15px;
   padding-bottom: 55px;
@@ -29,9 +29,22 @@ table, tr, td, th {
   border-collapse: collapse;
 }
 
+td.per {
+  text-align: center;
+}
+
 input {
   padding: 7px;
   font-size: 11px;
+}
+
+input.num {
+  text-align: right;
+}
+
+#a1_num, #a2_num, #a3_num, #a4_num,
+#a1_denom, #a2_denom, #a3_denom, #a4_denom {
+  width: 83px;
 }
 
 input.numerator {
@@ -43,24 +56,30 @@ input.activity, input.sname {
   width: 93%;
 }
 
-input.per, input.gpa{
-  display: table-cell;
-  width: 95%;
-  text-align: center;
-  border-style: none;
-  background-color: #eff5f5;
-  font-weight: bold;
-}
-
 button {
   color: white;
   background-color: #cc0000;
   border-style: hidden;
   border-radius: 3px;
-  float: right;
   font-size: 13px;
   text-align: center;
   height: 30px;
   width: 75px;
   margin: 7px;
+}
+
+span.left_side {
+  float: left;
+}
+
+span.right_side {
+  float: right;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
