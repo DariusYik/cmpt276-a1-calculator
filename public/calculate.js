@@ -63,28 +63,27 @@ function removeRow() {
 }
 */
 function average() {
-  var total = 0;
   var total_num = 0;
   var total_den = 0;
-  var ActivityCount = 0; //number of activities counted in the mean
-  for (var i = 1; i <TableRowCount; i++) {
+  for (var i = 1; i < TableRowCount; i++) {
     var num = document.getElementById("a"+i+"_num").value;
-    var dem = document.getElementById("a"+i+"_denom").value;
-    var temp_total = num / dem;
-    if( isFinite(temp_total) == false || temp_total < 0 ) {
+    var den = document.getElementById("a"+i+"_denom").value;
+    var check = num / den; //checks whether the current activity is being used or not
+    if( isFinite(check) == false || check < 0 ) {
       continue;
     }
-    ActivityCount++;
-    total += temp_total;
+    total_num += parseFloat(num); //parseFloat to make sure it's adding and not concatenating
+    total_den += parseFloat(den); //parseFloat to make sure it's adding and not concatenating
   }
-  total = total / ActivityCount;
-  document.getElementById("total_per").innerHTML = total;
+  var total = total_num / total_den * 100;
+  total = Math.round(total * 100) / 100;
+  document.getElementById("total_per").innerHTML = total + "%";
 }
 
 function mean() {
   var total = 0;
   var ActivityCount = 0; //number of activities counted in the mean
-  for (var i = 1; i <TableRowCount; i++) {
+  for (var i = 1; i < TableRowCount; i++) {
     var num = document.getElementById("a"+i+"_num").value;
     var den = document.getElementById("a"+i+"_denom").value;
     var temp_total = num / den;
@@ -92,10 +91,11 @@ function mean() {
       continue;
     }
     ActivityCount++;
-    total += temp_total;
+    total += parseFloat(temp_total); //parseFloat to make sure it's adding and not concatenating
   }
-  total = total / ActivityCount;
-  document.getElementById("total_per").innerHTML = total;
+  total = total / ActivityCount * 100;
+  total = Math.round(total * 100) / 100;
+  document.getElementById("total_per").innerHTML = total + "%";
 }
 
 //calculates percent instantly

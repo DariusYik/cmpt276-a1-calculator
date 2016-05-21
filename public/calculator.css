@@ -1,6 +1,9 @@
 /** CMPT 276 Assignment 1
     CSS for Calculator **/
 
+h1 {
+  font-weight: lighter;
+}
 
 h2 {
   color: #cc0000;

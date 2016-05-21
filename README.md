@@ -1,3 +1,13 @@
+Features:
+1. Calculates the percentage as you type
+2. Lets you enter name of Activity and Short Name. If you delete the name, it will still show which activity it's on. (e.g. placeholder)
+3. Percentages with decimal places will only 2 decimals at most
+4. Activities left blank
+
+
+
+
+
 # ruby-getting-started
 
 A barebones Rails app, which can easily be deployed to Heroku.
@@ -65,4 +75,3 @@ You can also use Docker to release to Heroku:
 For more information about using Ruby on Heroku, see these Dev Center articles:
 
 - [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
-
