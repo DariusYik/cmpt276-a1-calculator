@@ -17,6 +17,7 @@
   <h2>Activities</h2>
   <p>Give grades to the numeric activities:</p>
   <br>
+  <form id="main_form">
   <table id="main_table">
     <tr>
       <th>Name</th>
@@ -62,9 +63,11 @@
     <button type="button" onclick="mean()">MEAN</button>
   </span>
   <span class="left_side">
-    <button onclick="addRow()">+ Activity</button>
-    <button onclick="removeRow()">- Activity</button>
+    <button type="button" onclick="addRow()">+ Activity</button>
+    <button type="button" onclick="removeRow()">- Activity</button>
+    <button type="button" onclick="resetButton()">Reset</button>
   </span>
+  </form>
   </div>
 </body>
 </html>

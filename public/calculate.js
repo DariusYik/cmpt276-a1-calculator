@@ -3,6 +3,21 @@
 
 var TableRowCount = 5; //Count starting from top of table (not including total) for row tracking
 
+//calculates percent instantly
+function calculate() {
+  for (var i = 1; i<TableRowCount; i++) {
+    var num = document.getElementById("a"+i+"_num").value;
+    var den = document.getElementById("a"+i+"_denom").value;
+    var per = num / den * 100;
+    if( isFinite(per) == false || per < 0 ) { //skips calculation if input values are empty
+      document.getElementById("percentage"+i).innerHTML = "";
+      continue;
+    }
+    per = Math.round(per * 100) / 100;
+    document.getElementById("percentage"+i).innerHTML = per + "%";
+  }
+}
+
 function addRow() {
   $("tr:last").before('<tr>' +
                       '<td><input class="activity" type="text" value="Activity ' + TableRowCount + '" placeholder="Activity ' + TableRowCount + '"></td>' +
@@ -23,6 +38,33 @@ function removeRow() {
   table.deleteRow(TableRowCount - 1);
 
   TableRowCount--;
+}
+
+function resetButton() {
+  //resetting input fields
+  document.getElementById("main_form").reset();
+  //resetting total
+  document.getElementById("total_per").innerHTML = "";
+  //resetting activities back to 4
+  var x = TableRowCount - 5; //value to check how many rows need to be reset
+  if ( x < 0 ) {
+    for(var i = 0; i < Math.abs(x); i++) {
+      addRow();
+    }
+  }
+  else {
+    var table = document.getElementById("main_table");
+    var x = TableRowCount - 5; //value to check how rows need to be reset
+    for (var i = 0; i < x; i++) {
+      table.deleteRow(TableRowCount - 1);
+      TableRowCount--;
+    }
+  }
+  //resetting the 4 activities' % cells back to being empty
+  for (var j = 1; j < 5; j++)
+  {
+    document.getElementById("percentage"+j).innerHTML = "";
+  }
 }
 
 function average() {
@@ -67,19 +109,4 @@ function mean() {
     return;
   }
   document.getElementById("total_per").innerHTML = total + "%";
-}
-
-//calculates percent instantly
-function calculate() {
-  for (var i = 1; i<TableRowCount; i++) {
-    var num = document.getElementById("a"+i+"_num").value;
-    var den = document.getElementById("a"+i+"_denom").value;
-    var per = num / den * 100;
-    if( isFinite(per) == false || per < 0 ) { //skips calculation if input values are empty
-      document.getElementById("percentage"+i).innerHTML = "";
-      continue;
-    }
-    per = Math.round(per * 100) / 100;
-    document.getElementById("percentage"+i).innerHTML = per + "%";
-  }
 }
