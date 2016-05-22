@@ -27,28 +27,28 @@
     <tr>
       <td><input class="activity" type="text" value="Activity 1" placeholder="Activity 1"></td>
       <td><input class="sname" type="text" value="A1" placeholder="A1"></td>
-      <td><input id="a1_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a1_denom" type="number" onkeydown="calculate()" onkeyup="calculate()"></td>
+      <td><input id="a1_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a1_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()"></td>
       <td id="percentage1" class="per" />
     </tr>
     <tr>
       <td><input class="activity" type="text" value="Activity 2" placeholder="Activity 2"></td>
       <td><input class="sname" type="text" value="A2" placeholder="A2"></td>
-      <td><input id="a2_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a2_denom" type="number" onkeydown="calculate()" onkeyup="calculate()"></td>
+      <td><input id="a2_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a2_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()"></td>
       <td id="percentage2" class="per" />
     </tr>
     <tr>
       <td><input class="activity" type="text" value="Activity 3" placeholder="Activity 3"></td>
       <td><input class="sname" type="text" value="A3" placeholder="A3"></td>
-      <td><input id="a3_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a3_denom" type="number" onkeydown="calculate()" onkeyup="calculate()"></td>
+      <td><input id="a3_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a3_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()"></td>
       <td id="percentage3" class="per" />
     </tr>
     <tr>
       <td><input class="activity" type="text" value="Activity 4" placeholder="Activity 4"></td>
       <td><input class="sname" type="text" value="A4" placeholder="A4"></td>
-      <td><input id="a4_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a4_denom" type="number" onkeydown="calculate()" onkeyup="calculate()"></td>
+      <td><input id="a4_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a4_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()"></td>
       <td id="percentage4" class="per" />
     </tr>
-    <tr id="total">
+    <tr>
       <td><b>TOTAL</b></td>
       <td />
       <td />
@@ -56,9 +56,10 @@
     </tr>
   </table>
   <br>
+  <br>
   <span class="right_side">
-    <button type="button" onclick="mean()">MEAN</button>
     <button type="button" onclick="average()">AVERAGE</button>
+    <button type="button" onclick="mean()">MEAN</button>
   </span>
   <span class="left_side">
     <button onclick="addRow()">+ Activity</button>

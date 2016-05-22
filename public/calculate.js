@@ -1,67 +1,30 @@
 // CMPT 276 Assignment 1
 // Calculator
 
-
-
-
-/*
-The	sum	of	all	grades	divided by	the	total	number	of	grades
-			A1	70/100,	A2	20/80,	A3	10/10:
-			(0.7	+	0.25	+	1.0)/3	=	0.65	à 65/100
-Average grades
-The	sum	of	all	grade	values	divided	by	the	sum	of	maximums	from	all	aggregated	items.
-A1	70/100,	A2	20/80,	A3	10/10:
-			(70	+	20	+	10)/(100+80+10) =	100/190 =	0.526 à 52.6/100
-
-
-*/
-
 var TableRowCount = 5; //Count starting from top of table (not including total) for row tracking
-var RowNumber = TableRowCount-1; //Number of activities, easier for typing in later on
-/*
-function total(numerator, denominator, name) {
-  numerator = document.getElementsByClassName('a1_per').value;
-}
 
 function addRow() {
-    /*var table = document.getElementById("main_table");
-    var row = table.insertRow(TableRowCount);
-    var activity_name = row.insertCell(0);
-    activity_name.innerHTML = '<input type="input" onload="this.value="Activity "+RowNumber" placeholder="Activity "+RowNumber />';
-
-    var sname = row.insertCell(1);
-    var grade = row.insertCell(2);
-    var percentage = row.insertCell(3);
-    var gpa = row.insertCell(4);
-
-    var element1 = document.createElement("input");
-    element1.type="Activity "+RowNumber;
-    grade.appendChild(element1);
-
-    activity_name.setAttribute("value", "Activity" + TableRowCount);
-
-*/
-/*
-  var tblBody = document.getElementById("main_table").tBodies[0];
-  var newNode = tblBody.rows[1].cloneNode(true);
-  newNode.insertBefore("total");
-  RowNumber++;
+  $("tr:last").before('<tr>' +
+                      '<td><input class="activity" type="text" value="Activity ' + TableRowCount + '" placeholder="Activity ' + TableRowCount + '"></td>' +
+                      '<td><input class="sname" type="text" value="A' + TableRowCount + '" placeholder="A' + TableRowCount + '"></td>' +
+                      '<td><input id="a'+TableRowCount+'_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a'+TableRowCount+'_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()"></td>' +
+                      '<td id="percentage'+TableRowCount+'" class="per" />' +
+                      '</tr>');
   TableRowCount++;
 }
 
 function removeRow() {
   if ( TableRowCount == 2 ) {
-    alert("You can't have less than one row!");
+    alert("You can't have less than one activity!");
     return; //exits if you try to remove the last row
   }
 
   var table = document.getElementById("main_table");
-  table.deleteRow(RowNumber);
+  table.deleteRow(TableRowCount - 1);
 
-  RowNumber--;
   TableRowCount--;
 }
-*/
+
 function average() {
   var total_num = 0;
   var total_den = 0;
@@ -77,6 +40,10 @@ function average() {
   }
   var total = total_num / total_den * 100;
   total = Math.round(total * 100) / 100;
+  if (isNaN(total) == true) { //makes sure that there is something to calculate
+    alert("You must enter a value for both the numerator and the denominator!");
+    return;
+  }
   document.getElementById("total_per").innerHTML = total + "%";
 }
 
@@ -95,6 +62,10 @@ function mean() {
   }
   total = total / ActivityCount * 100;
   total = Math.round(total * 100) / 100;
+  if (isNaN(total) == true) { //makes sure that there is something to calculate
+    alert("You must enter a value for both the numerator and the denominator!");
+    return;
+  }
   document.getElementById("total_per").innerHTML = total + "%";
 }
 
@@ -104,8 +75,8 @@ function calculate() {
     var num = document.getElementById("a"+i+"_num").value;
     var den = document.getElementById("a"+i+"_denom").value;
     var per = num / den * 100;
-    if( isFinite(per) == false || per < 0 ) {
-      document.getElementById("percentage"+i).innerHTML = "N/A";
+    if( isFinite(per) == false || per < 0 ) { //skips calculation if input values are empty
+      document.getElementById("percentage"+i).innerHTML = "";
       continue;
     }
     per = Math.round(per * 100) / 100;
