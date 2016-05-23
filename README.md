@@ -1,4 +1,4 @@
-#CMPT276 Assignment 1   Grade Calculator
+#CMPT276 Assignment 1 - Grade Calculator
 
 ##Website
 https://cmpt276-a1-calculator.herokuapp.com/calculator.html
