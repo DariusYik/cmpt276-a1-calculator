@@ -1,77 +1,22 @@
-Features:
-1. Calculates the percentage as you type
-2. Lets you enter name of Activity and Short Name. If you delete the name, it will still show which activity it's on. (e.g. placeholder)
-3. Percentages with decimal places will only 2 decimals at most
-4. Activities left blank
+#CMPT276 Assignment 1
+#Grade Calculator
 
+##Website
+https://cmpt276-a1-calculator.herokuapp.com/calculator.html
 
+The Grade Calculator allows you to enter the grade of an activity to find out its percent.
 
+Then you can choose to find the sum of all grades divided by total number of grades (mean) or the sum of all grades divided by the sum of all maximums (average).
 
+##Features
+1. Calculates the percent of an activity in real time. If the percent is an invalid number, nothing will be displayed in the percentage column. An invalid number is NaN value, infinity (e.g. anything divided by 0), or negative percentage.
 
-# ruby-getting-started
+2. You can change the name of the activity or short name. If you remove the name, a placeholder will still show which activity number or short name it is.
 
-A barebones Rails app, which can easily be deployed to Heroku.
+3. You can leave the grade of activities blank, and they will not be calculated in the average or mean. NOTE: You must enter a value for both numerator and denominator for average or mean to work properly.
 
-This application support the [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby) article - check it out.
+4. Percentages that have decimals will only be calculated up to 2 decimal places. (e.g. 1/10 = 10%, 1.1/10 = 10.1%, 1.11 = 10.11%, 1.1111111/10 = 10.11%)
 
-## Running Locally
+5. You can add or remove rows to the bottom of the table with the "+ Activity" or "- Activity" buttons. The rows added will automatically be named with the corresponding number of activity. The new rows will still have all the features above. Removing rows will remove them from the bottom up. You can remove rows up until there is one activity left, and if you try to remove that you will get a pop up message preventing you from doing so.
 
-Make sure you have Ruby installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
-
-```sh
-$ git clone git@github.com:heroku/ruby-getting-started.git
-$ cd ruby-getting-started
-$ bundle install
-$ bundle exec rake db:create db:migrate
-$ heroku local
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
-```
-
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Docker
-
-The app can be run and tested using the [Heroku Docker CLI plugin](https://devcenter.heroku.com/articles/introduction-local-development-with-docker).
-
-Make sure the plugin is installed:
-
-    heroku plugins:install heroku-docker
-
-Configure Docker and Docker Compose:
-
-    heroku docker:init
-
-And run the app locally:
-
-    docker-compose up web
-
-The app will now be available on the Docker daemon IP on port 8080.
-
-To work with the local database and do migrations, you can open a shell:
-
-    docker-compose run shell
-    bundle exec rake db:migrate
-
-You can also use Docker to release to Heroku:
-
-    heroku create
-    heroku docker:release
-    heroku open
-
-## Documentation
-
-For more information about using Ruby on Heroku, see these Dev Center articles:
-
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+6. You can hit the "Reset" button to clear the Grades, Percentages, Totals, and reset the table back to 4 activities with their default names.

@@ -33,10 +33,8 @@ function removeRow() {
     alert("You can't have less than one activity!");
     return; //exits if you try to remove the last row
   }
-
   var table = document.getElementById("main_table");
   table.deleteRow(TableRowCount - 1);
-
   TableRowCount--;
 }
 
@@ -47,12 +45,12 @@ function resetButton() {
   document.getElementById("total_per").innerHTML = "";
   //resetting activities back to 4
   var x = TableRowCount - 5; //value to check how many rows need to be reset
-  if ( x < 0 ) {
+  if ( x < 0 ) { //less than 4
     for(var i = 0; i < Math.abs(x); i++) {
       addRow();
     }
   }
-  else {
+  else { //4 or more
     var table = document.getElementById("main_table");
     var x = TableRowCount - 5; //value to check how rows need to be reset
     for (var i = 0; i < x; i++) {
@@ -82,10 +80,6 @@ function average() {
   }
   var total = total_num / total_den * 100;
   total = Math.round(total * 100) / 100;
-  if (isNaN(total) == true) { //makes sure that there is something to calculate
-    alert("You must enter a value for both the numerator and the denominator!");
-    return;
-  }
   document.getElementById("total_per").innerHTML = total + "%";
 }
 
@@ -104,9 +98,5 @@ function mean() {
   }
   total = total / ActivityCount * 100;
   total = Math.round(total * 100) / 100;
-  if (isNaN(total) == true) { //makes sure that there is something to calculate
-    alert("You must enter a value for both the numerator and the denominator!");
-    return;
-  }
   document.getElementById("total_per").innerHTML = total + "%";
 }
