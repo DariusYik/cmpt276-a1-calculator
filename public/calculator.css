@@ -9,6 +9,18 @@ h2 {
   color: #cc0000;
 }
 
+div.main_border {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  border-left: 70px;
+  border-right: 70px;
+  border-top: 20px;
+  border-bottom: 20px;
+  border-style: solid;
+  border-color: #cc0000;
+}
+
 div.main_body {
   width: 1043px;
   background-color: #eff5f5;
